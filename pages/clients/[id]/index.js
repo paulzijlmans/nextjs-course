@@ -1,12 +1,18 @@
 import { useRouter } from 'next/router';
 
 function ClientProjectPage() {
-  const { query } = useRouter();
+  const router = useRouter();
+  const { query } = router;
   console.log({ query });
+
+  function loadProjectHandler() {
+    router.push('/clients/max/projecta');
+  }
 
   return (
     <div>
       <h1>The Projects of a Given Client</h1>
+      <button onClick={loadProjectHandler}>Load Project A</button>
     </div>
   );
 }
